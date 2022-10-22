@@ -11,4 +11,25 @@
 
 educational_grant, expenses = 10000, 12000
 
-# TODO здесь ваш код
+# Решение:
+
+months = 10
+educational_grant_for_alltime = 0
+
+i = 1
+while i <= months:
+    if i == 1:
+        educational_grant_for_alltime = educational_grant_for_alltime + educational_grant
+        i += 1
+        continue
+    educational_grant = educational_grant * 1.03
+    educational_grant_for_alltime = educational_grant_for_alltime + educational_grant
+    i += 1
+
+expenses_for_alltime = expenses * months
+parents_money = round(educational_grant_for_alltime, 2) - expenses * months
+
+if expenses_for_alltime >= educational_grant_for_alltime:
+    print('Студенту хватает денег на', months, 'месяцев.', 'Даже остается', round((expenses_for_alltime - educational_grant_for_alltime)), 'рублей')
+elif expenses_for_alltime < educational_grant_for_alltime:
+    print('На', months, 'месяцев', 'студенту надо попросить', round((educational_grant_for_alltime - expenses_for_alltime)), 'рублей')
