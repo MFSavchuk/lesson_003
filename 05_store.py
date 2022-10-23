@@ -46,10 +46,21 @@ store = {
 #         подсчет стоимости товара
 #     вывод на консоль количества и стоимости товара на складе
 
-for item in goods:
+# for item in goods:
+#     article = store[goods[item]]
+#     items_quantity = 0
+#     items_total_cost = 0
+#     for position_in_warehouse in article:
+#         items_quantity += position_in_warehouse['quantity']
+#         items_cost = position_in_warehouse['price'] * position_in_warehouse['quantity']
+#         items_total_cost += items_cost
+#     print(item, '-', items_quantity, 'шт, общая стоимость', items_total_cost, 'руб.')
+
+
+for item, article in goods.items():
     items_quantity = 0
     items_total_cost = 0
-    for position_in_warehouse in store[goods[item]]:
+    for position_in_warehouse in store[article]:
         items_quantity += position_in_warehouse['quantity']
         items_cost = position_in_warehouse['price'] * position_in_warehouse['quantity']
         items_total_cost += items_cost
