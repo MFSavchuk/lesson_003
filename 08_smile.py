@@ -34,8 +34,14 @@ def draw_smile(color_element=sd.COLOR_YELLOW):
     sd.circle(center_position=center_position2, radius=radius, color=color_element, width=2)
 
 
-for _ in range(10):
+smiles = input('Введите число смайлов: ')
+for _ in range(int(smiles)):
     color = sd.random_color()
     draw_smile(color_element=color)
 
 sd.pause()
+
+# while True:
+#     end = input('Введите q для выхода')
+#     if end == 'q':
+#         exit()
