@@ -16,7 +16,7 @@ for _ in range(3):
 
 # Написать функцию рисования пузырька, принммающую 2 (или более) параметра: точка рисовании и шаг
 
-def bubble(point, step, color=(255, 255, 0)):
+def bubble(point, step, color = sd.COLOR_YELLOW):
     radius = 50
     for _ in range(3):
         radius += step
@@ -42,7 +42,7 @@ for y in range(100, 301, 100):
 
 # Нарисовать 100 пузырьков в произвольных местах экрана случайными цветами
 
-for _ in range(300):
+for _ in range(200):
     point = sd.random_point()
     step = random.randint(2, 10)
     color = sd.random_color()
